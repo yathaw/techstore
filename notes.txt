@@ -1,0 +1,86 @@
+Model
+======
+	jetpackmall >> app >> User.php
+
+View
+=====
+	jetpackmall >> resources >> views
+
+Controller
+=========
+	jetpackmall >> app >> Http >> Controllers
+
+Route
+======
+	jetpackmall >> routes >> web.php
+
+-------------------------------------------------------------
+
+1. Create Laravel Project
+	composer create-project --prefer-dist laravel/laravel jetpackmall
+
+2. Install Bootstrap4 with auth in laravel 8
+	->	composer require laravel/jetstream
+	->	php artisan jetstream:install livewire
+	->	php artisan jetstream:install inertia
+	-> 	npm install
+	-> 	npm run dev
+
+3. keys to your database
+	.env
+		-> DB_DATABASE | DB_USERNAME | DB_PASSWORD
+
+4.	Define String Length
+	app >> provider >> AppServiceProvider.php
+
+5. migrate
+	->	php artisan migrate
+
+6. laravel development server
+	->	php artisan serve
+
+7.	Create Controller
+	-> php artisan make:controller CategoryController -r
+
+8.	Define Route
+		jetpackmall >> routes >> web.php
+	->	use App\Http\Controllers\CategoryController;
+	->	Route::resource('/category',CategoryController::class);
+
+9. Template Cut
+	->	extract sb-admin.zip in public folder
+	->	rename sb-admin.... to backend
+
+	->	create components folder in views
+			jetpackmall >> resources >> views
+
+	->	create backend.blade.php in components folder
+			jetpackmall >> resources >> views >> components
+
+	->	all code copy from jetpackmall >> public >> backend >> tables.html
+	->	code paste to jetpackmall >> resources >> views >> components >> backend.blade.php
+
+	->	add "asset" css-link, js-script in backend.blade.php
+	->	{{ $slot }}  in duplicate part of backend.blade.php
+
+	->	create category folder in views
+			jetpackmall >> resources >> views
+
+	->	create list.blade.php in category folder
+			jetpackmall >> resources >> views >> category
+
+	->	write return view('category.list'); in CategoryController@index function
+
+10.	Database Migration
+
+	->	php artisan make:migration create_categories_table
+	->	php artisan make:migration create_subcategories_table	 
+	->	php artisan make:migration create_brands_table	
+	->	php artisan make:migration create_items_table
+	->	php artisan make:migration create_orders_table	 
+	->	php artisan make:migration create_orderdetails_table	 
+
+11.	Define Column in migration
+	jetpackmall >> database >> migrations
+
+
