@@ -89,7 +89,7 @@
 
             <!-- Nav Item - Items -->
             <li class="nav-item {{ Request::segment(1) ==='item' ? 'active' :'' }}">
-                <a class="nav-link" href="charts.html">
+                <a class="nav-link" href="{{ route('item.index') }}">
                     <i class="fas fa-fw fa-chart-area"></i>
                     <span> Item </span>
                 </a>
@@ -97,7 +97,7 @@
 
             <!-- Nav Item - Brands -->
             <li class="nav-item {{ Request::segment(1) ==='brand' ? 'active' :'' }}">
-                <a class="nav-link" href="charts.html">
+                <a class="nav-link" href="{{ route('brand.index') }}">
                     <i class="fas fa-fw fa-chart-area"></i>
                     <span> Brand </span>
                 </a>
@@ -105,7 +105,7 @@
 
             <!-- Nav Item - Tables -->
             <li class="nav-item {{ Request::segment(1) ==='subcategory' ? 'active' :'' }}">
-                <a class="nav-link" href="tables.html">
+                <a class="nav-link" href="{{ route('subcategory.index') }}">
                     <i class="fas fa-fw fa-table"></i>
                     <span> Subcategory </span>
                 </a>

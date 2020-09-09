@@ -16,6 +16,6 @@ class Brand extends Model
     ];
 
     public function items(){
-        return $this->hasMany('App\Model\Item');
+        return $this->hasMany('App\Models\Item');
     }
 }

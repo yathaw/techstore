@@ -16,10 +16,10 @@ class Subcategory extends Model
     ];
 
     public function category(){
-    	return $this->belongsTo('App\Model\Category');
+    	return $this->belongsTo('App\Models\Category');
     }
 
     public function items(){
-        return $this->hasMany('App\Model\Item');
+        return $this->hasMany('App\Models\Item');
     }
 }

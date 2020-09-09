@@ -16,15 +16,15 @@ class Item extends Model
     ];
 
     public function subcategory(){
-        return $this->belongsTo('App\Model\Subcategory');
+        return $this->belongsTo('App\Models\Subcategory');
     }
 
     public function brand(){
-        return $this->belongsTo('App\Model\Brand');
+        return $this->belongsTo('App\Models\Brand');
     }
 
     public function orders(){
-        return $this->belongsToMany('App\Model\Order', 'orderdetails','order_id','item_id')
+        return $this->belongsToMany('App\Models\Order', 'orderdetails','order_id','item_id')
         ->withPivot('qty')
         ->withTimestamps();;
     }

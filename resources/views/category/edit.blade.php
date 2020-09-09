@@ -41,6 +41,10 @@
                             <div class="tab-pane fade" id="nav-newphoto" role="tabpanel" aria-labelledby="nav-newphoto-tab">
                                 <input type="file" id="nav-newphoto" name="photo">
                             </div>
+
+                            <div class="text-danger form-control-feedback">
+                                {{ $errors->first('photo') }}
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -49,6 +53,9 @@
                     <div class="form-group col-md-12 ">
                         <label for="name"> Name </label>
                         <input type="text" class="form-control" id="name" placeholder="Computer" name="name" value="{{ $name }}">
+                        <div class="text-danger form-control-feedback">
+                            {{ $errors->first('name') }}
+                        </div>
                     </div>
                 </div>
             </div>
