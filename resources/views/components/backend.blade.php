@@ -9,7 +9,10 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title> Jetpack Mall </title>
+    <title> TECHSTORE </title>
+
+    <!-- Favicon-->
+    <link rel="icon" href="{{ asset('logo.png') }}" type="image/gif" sizes="16x16">
 
     <!-- Custom fonts for this template -->
     <link href="{{ asset('backend/vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet" type="text/css">
@@ -30,14 +33,16 @@
     <div id="wrapper">
 
         <!-- Sidebar -->
-        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+        <ul class="navbar-nav sidebar sidebar-dark accordion" id="accordionSidebar" style="background-color: #9697A5">
 
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
                 <div class="sidebar-brand-icon rotate-n-15">
-                    <i class="fas fa-laugh-wink"></i>
+                    <img src="{{ asset('logo.png') }}" class="img-fluid">
                 </div>
-                <div class="sidebar-brand-text mx-3">SB Admin <sup>2</sup></div>
+                <div class="sidebar-brand-text mx-3">
+                    TECHSTORE
+                </div>
             </a>
 
             <!-- Divider -->
@@ -59,7 +64,7 @@
             </div>
 
             <!-- Nav Item - Charts -->
-            <li class="nav-item">
+            <li class="nav-item {{ Request::segment(1) ==='order' ? 'active' :'' }}">
                 <a class="nav-link" href="charts.html">
                     <i class="fas fa-fw fa-chart-area"></i>
                     <span> Order </span>
@@ -67,7 +72,7 @@
             </li>
 
             <!-- Nav Item - Charts -->
-            <li class="nav-item">
+            <li class="nav-item {{ Request::segment(1) ==='customer' ? 'active' :'' }}">
                 <a class="nav-link" href="charts.html">
                     <i class="fas fa-fw fa-chart-area"></i>
                     <span> Customer </span>
@@ -83,7 +88,7 @@
             </div>
 
             <!-- Nav Item - Items -->
-            <li class="nav-item">
+            <li class="nav-item {{ Request::segment(1) ==='item' ? 'active' :'' }}">
                 <a class="nav-link" href="charts.html">
                     <i class="fas fa-fw fa-chart-area"></i>
                     <span> Item </span>
@@ -91,7 +96,7 @@
             </li>
 
             <!-- Nav Item - Brands -->
-            <li class="nav-item">
+            <li class="nav-item {{ Request::segment(1) ==='brand' ? 'active' :'' }}">
                 <a class="nav-link" href="charts.html">
                     <i class="fas fa-fw fa-chart-area"></i>
                     <span> Brand </span>
@@ -99,7 +104,7 @@
             </li>
 
             <!-- Nav Item - Tables -->
-            <li class="nav-item active">
+            <li class="nav-item {{ Request::segment(1) ==='subcategory' ? 'active' :'' }}">
                 <a class="nav-link" href="tables.html">
                     <i class="fas fa-fw fa-table"></i>
                     <span> Subcategory </span>
@@ -107,7 +112,7 @@
             </li>
 
              <!-- Nav Item - Tables -->
-            <li class="nav-item active">
+            <li class="nav-item {{ Request::segment(1) ==='category' ? 'active' :'' }}">
                 <a class="nav-link" href="{{ route('category.index') }}">
                     <i class="fas fa-fw fa-table"></i>
                     <span> Category </span>
